@@ -52,9 +52,9 @@ function App() {
     }, [displayChoice, currentQuestion]);
 
     return (
-        <>
+        <main>
             <h1>Questions / Answers Game</h1>
-            <div>
+            <section>
                 {/* Display message if data empty or undefined */}
                 {data.length > 0 ? (
                   displayChoice && (
@@ -75,8 +75,8 @@ function App() {
                 {!displayChoice && seconds > 0 && (
                     <p>Next question in {seconds}</p>
                 )}
-            </div>
-        </>
+            </section>
+        </main>
     );
 }
 
