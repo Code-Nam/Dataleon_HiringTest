@@ -82,6 +82,26 @@ button:nth-child(2):hover {
     box-shadow: none;
 }
 
+#restartBtn{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #252b37;
+  color: white;
+  font-weight: 700;
+  padding: 1rem 0.5rem;
+  box-shadow: 0 0 5px #252b37;
+}
+
+#restartBtn:active,
+#restartBtn:focus {
+  outline: 2px solid #fb7624;
+}
+
+#restartBtn:hover{
+  background-color: #5f81c2;
+}
+
 p {
     font-size: 1.25rem;
     font-weight: 700;

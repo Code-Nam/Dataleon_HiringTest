@@ -25,6 +25,13 @@ function App() {
         setSeconds(5);
     };
 
+    const handleRestart = () => {
+        setCurrentQuestion(0);
+        setAnswerText("");
+        setDisplayChoice(true);
+        setSeconds(5);
+    };
+
     useEffect(() => {
         if (displayChoice) return;
 
@@ -57,24 +64,34 @@ function App() {
             <section>
                 {/* Display message if data empty or undefined */}
                 {data.length > 0 ? (
-                  displayChoice && (
-                    <>
-                      <h2>{data[currentQuestion]?.question}</h2>
-                      <ul>
-                        <button onClick={() => handleAnswer(1)}>Yes</button>
-                        <button onClick={() => handleAnswer(0)}>No</button>
-                      </ul>
-                    </>
-                  )
+                    displayChoice && (
+                        <>
+                            <h2>{data[currentQuestion]?.question}</h2>
+                            <ul>
+                                <button onClick={() => handleAnswer(1)}>
+                                    Yes
+                                </button>
+                                <button onClick={() => handleAnswer(0)}>
+                                    No
+                                </button>
+                            </ul>
+                        </>
+                    )
                 ) : (
-                  <p>No questions available.</p>
+                    <p>No questions available.</p>
                 )}
-                
+
                 {answerText && <p>{answerText}</p>}
 
                 {!displayChoice && seconds > 0 && (
                     <p>Next question in {seconds}</p>
                 )}
+                <button
+                    id='restartBtn'
+                    onClick={handleRestart}
+                >
+                    Restart
+                </button>
             </section>
         </main>
     );
